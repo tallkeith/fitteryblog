@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-559d5bfa09e5afce" async="async"></script>
+
+
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render "/refinery/head" %>
+  </head>
+  <body id="<%= canonical_id @page %>">
+    <%= site_bar -%>
+    <div id="page_container">
+      <header id="header">
+        <%= render "/refinery/header" -%>
+      </header>
+      <section id="page">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render "/refinery/footer" -%>
+      </footer>
+    </div>
+    <%= render "/refinery/javascripts" %>
+  </body>
+</html>
