@@ -1,0 +1,24 @@
+$site-gray: #333333;
+$site-light-gray: #555555;
+$site-black: black;
+$site-blue: #2194a8;
+
+.site-white {
+  color: white !important;
+}
+
+.site-gray {
+  color: $site-gray !important;
+}
+
+.site-light-gray {
+  color: $site-light-gray !important;
+}
+
+.site-black {
+  color: $site-black !important;
+}
+
+.site-blue {
+  color: $site-blue !important;
+}

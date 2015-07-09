@@ -1,0 +1,250 @@
+/* Universal */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+input[type=text]:focus, , input[type=password]:focus, select:focus, textarea:focus {
+  border-color: $site-blue;
+  box-shadow: 0 1px 1px $site-blue inset, 0 0 8px $site-blue;
+  outline: 0 none;
+}
+
+@media (max-width: 530px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+.loading-modal {
+  /*Bootstrap override*/
+  z-index: 1501 !important;
+  text-align: center;
+  .modal-content {
+    padding: 25px;
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+#error_explanation {
+  h2 {
+    display: none;
+  }
+  li {
+    font-size: 13px;
+    color: red !important;
+    font-weight: bold;
+  }
+}
+
+.error {
+  font-size: 13px;
+  font-weight: bold;
+  color: red;
+  span {
+    background: red;
+    color: white;
+  }
+}
+
+.fieldWithErrors {
+  label {
+    color: red !important;
+  }
+}
+
+a, u {
+  color: white;
+  text-decoration: none;
+  &:visited, &:active {
+  text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #E6E6E6;
+  }
+}
+
+.btn {
+  &:hover, &:visited, &:active {
+    opacity: 1;
+    background-color: $site-blue;
+    border-color: $site-blue;
+  }
+}
+
+#page_container {
+  overflow: hidden;
+}
+
+input.btn-primary {
+  color: white !important;
+  border: none;
+}
+
+.btn-second {
+  margin-top: 35px;
+  border-color: $site-blue !important;
+  color: $site-blue;
+  background: white !important;
+  border-radius: 0;
+  border-width: 2px;
+  &:hover, &:visited, &:active {
+    background-color: $site-blue !important;
+    color: white;
+  }
+}
+
+.btn-third {
+  border-radius: 0;
+  border: 1px solid white !important;
+  background-color: $site-blue !important;
+  color: white;
+  &:hover, &:visited, &:active {
+    background-color: white !important;
+    color: $site-blue;
+  }
+}
+
+.btn-fourth {
+  color: white;
+  background: $site-gray !important;
+  border: 1px solid $site-gray !important;
+  &:hover, &:visited, &:active {
+    background-color: #7a7a7a !important;
+    border-color: #7a7a7a !important;
+    color: white;
+  }
+}
+
+.btn-fifth {
+  color: white;
+  background: $site-gray !important;
+  border: 1px solid white !important;
+  &:hover, &:visited, &:active {
+    background-color: $site-gray !important;
+    border-color: white !important;
+    color: white;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Raleway', sans-serif !important;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.alternate {
+  color: $site-blue;
+}
+
+label {
+  color: $site-gray;
+  text-transform: uppercase;
+}
+
+.alt-color {
+  color: $site-blue;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.row {
+  &.header {
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+    img {
+      margin: 0 auto;
+      width: 100%;
+      padding: 0;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+      margin-top: -9%;
+      font-weight: bold;
+    }
+  }
+}
+
+.modal {
+  z-index: 1500;
+}
+.modal-backdrop {
+   background-color: $site-blue;
+}
+
+.error {
+  color: #9C2626;
+}
+
+.sale-price {
+  color: #b32e31;
+  font-weight: bold
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+.btn {
+  letter-spacing: 1px;
+  text-shadow: none;
+  font-size: 13px;
+  border-color: $site-blue;
+  background-color: $site-blue;
+}
+
+.inner-content {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  max-width: 1150px;
+}
+.emphasize {
+  padding-left: 15px;
+  border-left: 2px solid $site-blue;
+}
+
+@media (min-width: 1400px) {
+  .row {
+    &.header {
+      h1 {
+        margin-top: -15%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1090px) {
+  .header {
+    margin: 0;
+  }
+  h1 {
+    font-size: 33px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    margin: 0;
+    h1 {
+      margin: 0px;
+      padding: 5px;
+      font-size: 19px !important;
+    }
+  }
+}
+
+

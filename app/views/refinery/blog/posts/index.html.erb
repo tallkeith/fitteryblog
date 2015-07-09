@@ -1,4 +1,12 @@
 <% content_for :body do %>
+<div class="row header">
+  <%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
+  <h1 class="col-sm-12">
+    Blog
+  </h1>
+</div>
+<div class="blog">
+  <div class="inner-content">
   <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
 
   <% if @posts.any? %>
@@ -18,3 +26,4 @@
 
 <%= render "/refinery/content_page" %>
 <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+

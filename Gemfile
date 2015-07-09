@@ -28,7 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'refinerycms', github: 'refinery/refinerycms'
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 
-
+gem 'twitter-bootstrap-rails'
+gem 'haml'
+gem 'haml-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
