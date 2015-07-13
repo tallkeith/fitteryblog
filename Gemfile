@@ -32,6 +32,8 @@ gem 'twitter-bootstrap-rails'
 gem 'haml'
 gem 'haml-rails'
 
+gem 'mailchimp-api', '~> 2.0.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

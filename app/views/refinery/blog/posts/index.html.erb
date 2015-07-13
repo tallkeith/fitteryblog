@@ -1,5 +1,5 @@
 <!--body content -->
-	<div class="pull-left">
+	<div class="content-body">
 		<% content_for :body do %>
 		<div class="row header">
 		  <%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
@@ -8,17 +8,25 @@
 		  </h1>
 		</div>
 		<div class="blog">
-		  <div class="inner-content col-md-7">
-			  <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
-
-				  <% if @posts.any? %>
-				    <section id="blog_posts">
-				      <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-				      <%= will_paginate @posts %>
-				    </section>
-				  <% else %>
-				    <p><%= t('.no_blog_articles_yet') %></p>
-				  <% end %>
+		  <div class="inner-blog-content">
+		  	<div class="row">
+		  		
+		  		<div class="col-lg-8">
+		  			<% if @posts.any? %>
+				    	<section id="blog_posts">
+				      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+				      	<%= will_paginate @posts %>
+				    	</section>
+				  	<% else %>
+				    	<p><%= t('.no_blog_articles_yet') %></p>
+				  	<% end %>
+		  		</div>
+		  	
+	  			<%= render "/refinery/blog/shared/body_content_right" %>
+		  
+		  	</div>
+				  
+		
 				<% end %>
 			</div>
 		</div>
@@ -26,12 +34,7 @@
 <!-- end blog content -->
 
 <!-- Side Bar -->
-		<div class="pull-right">
-			
-			<% content_for :side_body_prepend do -%>
-			  <%= raw @page.content_for(Refinery::Pages.default_parts.second.to_sym) %>
-			<% end if Refinery::Pages.default_parts.many? -%>
-			<%= render '/refinery/blog/shared/body_content_right' %>
+		<div class="side-body">
 
 			<%= render "/refinery/content_page" %>
 			<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
