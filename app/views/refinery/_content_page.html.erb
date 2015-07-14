@@ -1,7 +1,5 @@
-<div class="col-lg-8">
-	<%= render_content_page(@page, {
+<%= render_content_page(@page, {
       :hide_sections => [:body_content_title, :hide_sections],
       :can_use_fallback => !local_assigns[:show_empty_sections] && !local_assigns[:remove_automatic_sections]
     }) %>
-</div>
 <%= render '/refinery/draft_page_message' if @page && @page.draft? -%>
