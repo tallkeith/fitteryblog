@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708154957) do
+ActiveRecord::Schema.define(version: 20150715152524) do
 
   create_table "refinery_blog_categories", force: :cascade do |t|
     t.string   "title"
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20150708154957) do
     t.string   "layout_template"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "background_image_id"
   end
 
   add_index "refinery_pages", ["depth"], name: "index_refinery_pages_on_depth"
@@ -229,6 +230,7 @@ ActiveRecord::Schema.define(version: 20150708154957) do
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "full_name"
+    t.integer  "image_id"
   end
 
   add_index "refinery_users", ["id"], name: "index_refinery_users_on_id"

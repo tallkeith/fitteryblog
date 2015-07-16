@@ -1,4 +1,4 @@
-<!--body content -->
+
 	<div class="content-body">
 		<% content_for :body do %>
 		<div class="row header">
@@ -31,13 +31,10 @@
 			</div>
 		</div>
 	
-<!-- end blog content -->
 
-<!-- Side Bar -->
 		<div class="side-body">
 
 			<%= render "/refinery/content_page" %>
 			<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
 		</div>
 	</div>
-<!-- End Side Bar
