@@ -34,6 +34,10 @@ gem 'haml-rails'
 
 gem 'mailchimp-api', '~> 2.0.6'
 
+gem 'pry-rails'
+ gem 'pry-rescue'
+ gem 'pry-remote'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

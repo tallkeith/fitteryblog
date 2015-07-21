@@ -12,6 +12,10 @@ module Refinery
         def find_page
           @page = Refinery::Page.find_by(:link_url => Refinery::Blog.page_url)
         end
+
+        def author
+          @author = author
+        end
     end
   end
 end

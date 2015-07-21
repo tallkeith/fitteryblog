@@ -12,9 +12,9 @@ module Refinery
         if request.format.rss?
           @posts = if params["max_results"].present?
             # limit rss feed for services (like feedburner) who have max size
-            Post.recent(params["max_results"])
+            Post.recent(params["max_results"]).where(user_id: params[:user_id])
           else
-            Post.newest_first.live.includes(:comments, :categories)
+            Post.newest_first.live.includes(:comments, :categories).where(user_id: params[:user_id])
           end
         end
         respond_with (@posts) do |format|
