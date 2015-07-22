@@ -13,7 +13,7 @@
 
     <!-- Begin author link -->
       <div class="blog_author">
-        By <%= link_to "#{@post.author.username}", "#{@post.author.bio_url}?user_id=#{@post.author.id}" if @post.author.present? %>
+        By <%= link_to "#{@post.author.username}", "/blog/author/#{@post.author.id}" if @post.author.present? %>
       </div>
     <!-- End author link -->
 

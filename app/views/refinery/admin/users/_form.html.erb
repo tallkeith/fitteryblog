@@ -33,7 +33,7 @@
     <%= f.password_field :password_confirmation, :autocomplete => 'off' %>
   </div>
 
-
+<!-- Image uploader -->
   <div class="field">
     <%= f.label :image %>
     <%= render :partial => "/refinery/admin/image_picker", :locals => {
@@ -44,6 +44,28 @@
     }
     %>
   </div>
+<!-- End Image uploader -->
+
+<!-- Author Bio Input -->
+  <div class='field'>
+    <%= f.label :auth_bio %>
+    <%= f.text_area :auth_bio %>
+  </div>
+<!-- End Author Bio Input -->
+
+<!-- Author Social Media -->
+  <div class='field'>
+    <%= f.label :auth_fb %>
+    <%= f.text_field :auth_fb %>
+  </div>
+  <div class='field'>
+    <%= f.label :auth_twitter %>
+    <%= f.text_field :auth_twitter %>
+  </div>
+
+<!-- End Author Social Media -->
+
+        
   
   <div class='field plugin_access'>
     <span class='label_with_help'>

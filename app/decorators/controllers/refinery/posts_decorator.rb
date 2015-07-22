@@ -1,17 +1,26 @@
-Refinery::Admin::UsersController.class_eval do
+Refinery::Blog::PostsController.class_eval do
 
-      def index
+     def index
+       
         if request.format.rss?
           @posts = if params["max_results"].present?
             # limit rss feed for services (like feedburner) who have max size
-            Post.recent(params["max_results"]).where(user_id: params[:user_id])
+            Post.recent(params["max_results"])
           else
-            Post.newest_first.live.includes(:comments, :categories).where(user_id: params[:user_id])
+            Post.newest_first.live.includes(:comments, :categories)
           end
         end
-        respond_with (@posts) do |format|
+        
+        @author = Refinery::User.find(params[:user_id]) unless params[:user_id].nil?
+
+        @posts = @posts.where(user_id: params[:user_id]) unless params[:user_id].nil?
+
+        respond_with ({:posts => @posts, :author => @author}) do |format|
           format.html
           format.rss { render :layout => false }
         end
       end
+
+
+
 end
