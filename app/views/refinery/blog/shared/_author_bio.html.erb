@@ -1,1 +1,9 @@
-_author_bio.html.erb
+<div class= "author_bio">
+	<% unless @author.nil? %>
+		<h1><%= @author.full_name %></h1>
+		<img src="<%= @author.image.url %>"/>
+		<p><%= @author.auth_bio %></p>
+		<p><%= @author.auth_fb%>
+		<%= @author.auth_twitter%></p>
+	<%end%>
+</div>

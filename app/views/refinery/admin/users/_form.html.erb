@@ -4,6 +4,7 @@
              :object => @user,
              :include_object_name => true %>
 
+  
   <div class='field'>
     <%= f.label :username %>
     <%= f.text_field :username %>
@@ -16,10 +17,7 @@
     <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-  <div class='field'>
-    <%= f.label :bio_url %>
-    <%= f.text_field :bio_url %>
-  </div>
+
   <div class='field'>
     <%= f.label :password %>
     <%= f.password_field :password, :autocomplete => 'off' %>
@@ -62,10 +60,7 @@
     <%= f.label :auth_twitter %>
     <%= f.text_field :auth_twitter %>
   </div>
-
 <!-- End Author Social Media -->
-
-        
   
   <div class='field plugin_access'>
     <span class='label_with_help'>

@@ -1,40 +1,50 @@
 
 	<div class="content-body">
-		<% content_for :body do %>
-		<div class="row header">
+			<div class="row header">
 		  <%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
 		  <h1 class="col-sm-12">
 		    <%= link_to "Blog", "/blog" %>
 		  </h1>
 		</div>
+		<% content_for :body do %>
+	
 		<div class="blog">
 		  <div class="inner-blog-content">
 		  	<div class="row">
 		  		
-		  		<div class="col-lg-8">
+		  		
+		  			<%= render "/refinery/blog/shared/author_bio" %>
+
 		  			<% if @posts.any? %>
 				    	<section id="blog_posts">
 				      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+				      	
 				      	<%= will_paginate @posts %>
+
+				      	</div>
+				      	
+
 				    	</section>
 				  	<% else %>
 				    	<p><%= t('.no_blog_articles_yet') %></p>
 				  	<% end %>
-		  		</div>
-		  	
-	  			<%= render "/refinery/blog/shared/body_content_right" %>
+		  		
 		  
-		  	</div>
+		  	
 				  
 		
 				<% end %>
 			</div>
+
 		</div>
 	
 
 		<div class="side-body">
 
 			<%= render "/refinery/content_page" %>
+
 			<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
 		</div>
+		
 	</div>
+<%= render '/refinery/blog/shared/body_content_right' %>
