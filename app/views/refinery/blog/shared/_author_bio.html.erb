@@ -1,9 +1,16 @@
 <div class= "author_bio">
-	<% unless @author.nil? %>
-		<h1><%= @author.full_name %></h1>
-		<img src="<%= @author.image.url %>"/>
-		<p><%= @author.auth_bio %></p>
-		<p><%= @author.auth_fb%>
-		<%= @author.auth_twitter%></p>
-	<%end%>
+	
+		<% unless @author.nil? %>
+			<div class= "col-md-4">
+
+				<img src="<%= @author.image.url %>" alt="<%= @author.full_name%>" height="100%" width="100%" class="img-circle">
+			</div>
+			<div class="col-md-8">
+				<h1><%= @author.full_name %></h1>
+				<h3><%= @author.auth_title %> </h3>
+				<p><%= @author.auth_bio %></p>
+				<p><i class="fa fa-twitter-square fa-2x"> <%= link_to "#{@author.auth_twitter}", "http://www.twitter.com/#{@author.auth_twitter}"%></i></p>
+			</div>
+		<%end%>
+	</div>
 </div>
