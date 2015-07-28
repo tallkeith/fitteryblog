@@ -5,7 +5,7 @@
 <% end %>
 <article id="blog_post">
   
-  
+  <div class="col-sm-8">
     <header>
       <h1><%= @post.title %></h1>
       <section class='details'>
@@ -35,6 +35,7 @@
         <% end %>
       </section>
     </header>
+    <br>
     <%= @post.body.html_safe %>
   
     <%= render 'nav' if next_or_previous?(@post) %>
@@ -53,11 +54,13 @@
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     </div>
-  
+  </div>
   
 </article>
+<div class="col-sm-4">
+  <%= render '/refinery/blog/shared/body_content_right' %>
+</div>
 
-<%= render '/refinery/blog/shared/body_content_right' %>
 
 <%= render '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
 
