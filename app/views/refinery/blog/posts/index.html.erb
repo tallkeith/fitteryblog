@@ -8,11 +8,11 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row inner-blog-content">
 			<% content_for :body do %>
 				<div class="blog">
 
-				  <div class="inner-blog-content">
+				  
 
 				  		  		
 			  			<%= render "/refinery/blog/shared/author_bio" %>
@@ -25,7 +25,7 @@
 					    	<p><%= t('.no_blog_articles_yet') %></p>
 					  	<% end %>
 				  
-				</div>		
+						
 			<% end %>
 				<!-- Begin posts -->
 					<div class="col-sm-8">
