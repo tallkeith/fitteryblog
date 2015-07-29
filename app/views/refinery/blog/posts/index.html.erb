@@ -1,44 +1,50 @@
 	<div class="content-body">
 		<div class="row header">
-	  <%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
-	  <h1 class="col-sm-12">
-	    <%= link_to "Blog", "/blog" %>
-	  </h1>
+	  	<%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
+	  	<h1 class="col-sm-12">
+	    	<%= link_to "Blog", "/blog" %>
+	  	</h1>
+		</div>
 	</div>
 
+	<div class="container-fluid">
+		<div class="row">
+			<% content_for :body do %>
+				<div class="blog">
 
-	<% content_for :body do %>
+				  <div class="inner-blog-content">
 
-		<div class="blog">
-		  <div class="inner-blog-content">
-		  	<div class="row">		  		
-	  			<%= render "/refinery/blog/shared/author_bio" %>
-	  			<% if @posts.any? %>
-			    	<section id="blog_posts">
-			      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-			      	<%= will_paginate @posts %>
-			    	</section>
-			  	<% else %>
-			    	<p><%= t('.no_blog_articles_yet') %></p>
-			  	<% end %>
-		  	</div>
-		  </div>
-		</div>		
-	<% end %>
+				  		  		
+			  			<%= render "/refinery/blog/shared/author_bio" %>
+			  			<% if @posts.any? %>
+					    	<section id="blog_posts">
+					      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+					      	<%= will_paginate @posts %>
+					    	</section>
+					  	<% else %>
+					    	<p><%= t('.no_blog_articles_yet') %></p>
+					  	<% end %>
+				  
+				</div>		
+			<% end %>
+				<!-- Begin posts -->
+					<div class="col-sm-8">
+						<%= render "/refinery/content_page" %>
+					</div>
+				<!-- End posts -->
+				<!-- Begin Sidebar -->
+					<div class="col-sm-4">
+		  	  	  <%= render '/refinery/blog/shared/body_content_right' %>
+		  	  </div>
+		  	<!-- End Sidebar -->
 
-		
-			<div class="col-sm-8">
-			<%= render "/refinery/content_page" %>
-		
-		</div>
-		<div class="sidebar col-sm-4">
-	    <%= render '/refinery/blog/shared/body_content_right' %>
-	  </div>
 					
+	  	  
+	  </div> <!-- end row -->
+	</div> <!-- end container -->
 
-
-			<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+				<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
 			
-		</div>
-	</div>
+
+	
 	
