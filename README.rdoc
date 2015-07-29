@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a blog app that I put together for Fittery. This app utilizes RefineryCMS, Ruby on Rails, Bootstrap, Disqus, MaliChimp, and ShareThis.
 
-Things you may want to cover:
+You should have the following gems installed:
 
-* Ruby version
+gem 'refinerycms', github: 'refinery/refinerycms', branch: '09d7e11a39c1e0a8a16a05135631db9e0830e092'
+gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'dff7379738dd1318783dd3135a59a480d3f1432f'
+gem 'twitter-bootstrap-rails'
+gem 'mailchimp-api', '~> 2.0.6'
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
