@@ -1,4 +1,3 @@
-
 	<div class="content-body">
 		<div class="row header">
 	  <%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
@@ -6,35 +5,37 @@
 	    <%= link_to "Blog", "/blog" %>
 	  </h1>
 	</div>
-		<% content_for :body do %>
-	
-			<div class="blog">
-			  <div class="inner-blog-content">
-			  	<div class="row">		  				  		
-		  			<%= render "/refinery/blog/shared/author_bio" %>
-		  			<% if @posts.any? %>
-				    	<section id="blog_posts">
-				      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-				      	<%= will_paginate @posts %>
-				    	</section>
-				  	<% else %>
-				    	<p><%= t('.no_blog_articles_yet') %></p>
-				  	<% end %>
-			  	</div>
-			  </div>
-			</div>
-			<div class="col-sm-4">
-				<%= render '/refinery/blog/shared/body_content_right' %>
-			</div>
-		<% end %>
 
-		<div class="side-body">
-			<div class="col-sm-8">
+
+	<% content_for :body do %>
+
+		<div class="blog">
+		  <div class="inner-blog-content">
+		  	<div class="row">		  				  		
+	  			<%= render "/refinery/blog/shared/author_bio" %>
+	  			<% if @posts.any? %>
+			    	<section id="blog_posts">
+			      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+			      	<%= will_paginate @posts %>
+			    	</section>
+			  	<% else %>
+			    	<p><%= t('.no_blog_articles_yet') %></p>
+			  	<% end %>
+		  	</div>
+		  </div>
+		</div>
+		<div class="col-sm-4">
+			<%= render '/refinery/blog/shared/body_content_right' %>
+		</div>
+	<% end %>
+
+	<div class="side-body">
+		<div class="col-sm-8">
 			<%= render "/refinery/content_page" %>
-			</div>
-			
+		</div>
 
 			<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+			
 		</div>
-		
+	</div>
 	
