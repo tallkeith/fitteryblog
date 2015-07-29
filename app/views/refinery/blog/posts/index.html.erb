@@ -11,21 +11,15 @@
 		<div class="row inner-blog-content">
 			<% content_for :body do %>
 				<div class="blog">
-
-				  
-
-				  		  		
-			  			<%= render "/refinery/blog/shared/author_bio" %>
-			  			<% if @posts.any? %>
-					    	<section id="blog_posts">
-					      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-					      	<%= will_paginate @posts %>
-					    	</section>
-					  	<% else %>
-					    	<p><%= t('.no_blog_articles_yet') %></p>
-					  	<% end %>
-				  
-						
+	  			<%= render "/refinery/blog/shared/author_bio" %>
+	  			<% if @posts.any? %>
+			    	<section id="blog_posts">
+			      	<%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+			      	<%= will_paginate @posts %>
+			    	</section>
+			  	<% else %>
+			    	<p><%= t('.no_blog_articles_yet') %></p>
+			  	<% end %>
 			<% end %>
 				<!-- Begin posts -->
 					<div class="col-sm-8">
@@ -38,9 +32,7 @@
 		  	  	  <%= render "/refinery/blog/shared/tags" %>
 		  	  </div>
 		  	<!-- End Sidebar -->
-
-					
-	  	  
+		  </div> <!-- End Blog Div -->
 	  </div> <!-- end row -->
 	</div> <!-- end container -->
 
