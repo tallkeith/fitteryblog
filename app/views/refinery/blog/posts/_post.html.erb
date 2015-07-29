@@ -1,9 +1,9 @@
-<div class="inner-blog-content"> 
   <% flash.each do |key, value| %>
    <div id='flash' class="flash flash_<%= key %>">
      <%= value %>
    </div>
   <% end %>
+  
   <article id="blog_post">
     
     <div class="col-sm-8">
@@ -39,7 +39,7 @@
       <br>
       <%= @post.body.html_safe %>
     
-      <%= render 'nav' if next_or_previous?(@post) %>
+    <%= render 'nav' if next_or_previous?(@post) %>
 
       <div id="disqus_thread"></div>
         <script type="text/javascript">
@@ -61,7 +61,7 @@
   <div class="col-sm-4">
     <%= render '/refinery/blog/shared/body_content_right' %>
   </div>
-</div>
+
 
   <%= render '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
-
+</div>

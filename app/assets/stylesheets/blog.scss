@@ -1,6 +1,18 @@
+.sidebar {
+	float: right;
+}
+
+
 .img-circle {
-        border: 3px solid $site-blue;
+        border: 2px solid $site-blue;
       }
+.inner-blog-content{
+		padding-left: 15px;
+		padding-right: 15px;
+		margin: 0 auto;
+		max-width: 1150px;
+		
+	}
 
 .blog {
 	.inner-blog-content{
@@ -19,3 +31,4 @@
 .content-body{
 	float: left;
 }
+
