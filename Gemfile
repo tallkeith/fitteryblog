@@ -25,8 +25,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'refinerycms', github: 'refinery/refinerycms', branch: '09d7e11a39c1e0a8a16a05135631db9e0830e092'
-gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'dff7379738dd1318783dd3135a59a480d3f1432f'
+gem 'refinerycms', github: 'refinery/refinerycms', branch: '0bbbc54f7910b8a5436ed7351bb4efb35f6f4c20'
+gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'd84600385bcc486241aad4e519164bda62064218'
 
 gem 'twitter-bootstrap-rails'
 gem 'haml'
