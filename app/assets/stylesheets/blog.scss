@@ -1,11 +1,59 @@
+
+//************
+// 	Newsletter Sign Up 
+//************
+div.mc-field-group input {
+  
+  border-radius: 3px;
+  outline: 0 none;
+}
+.btn {
+  opacity: 1;
+  background-color: $site-blue;
+  border-color: $site-blue;
+  color: white;
+}
+.input-group {
+	padding-bottom: 8px;
+}
+
+.subscribe_button{
+	padding-top: 15px
+}
+
+//************
+// 	Sidebar 
+//************
+
 .sidebar {
 	float: right;
 }
 
+.sidebar_spacer {
+	padding-left: 19px;
+}
 
+.sidebar_list {
+	color: $site-blue;
+}
+
+//************
+// Author
+//************
 .img-circle {
-        border: 2px solid $site-blue;
-      }
+  border: 2px solid $site-blue;
+}
+
+.well {
+	margin-top: 20px;
+}
+
+
+
+//************
+// 	General 
+//************
+
 .inner-blog-content{
 		padding-left: 15px;
 		padding-right: 15px;
@@ -30,5 +78,9 @@
 
 .content-body{
 	float: left;
+}
+
+h4 {
+	color: #999999;
 }
 

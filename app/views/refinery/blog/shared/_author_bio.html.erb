@@ -10,7 +10,12 @@
 					<h1><%= @author.full_name %></h1>
 					<h3><%= @author.auth_title %> </h3>
 					<p><%= @author.auth_bio %></p>
-					<%= image_tag("twitter.png", class: "img-responsive", :size => "25x25") %><%= link_to "#{@author.auth_twitter}", "http://www.twitter.com/#{@author.auth_twitter}", :target =>"_blank" %>
+					<div class="inline-block">
+					
+
+					<%= image_tag("twitter.png", class: "img-responsive", :size => "25x25") %>
+					<%= link_to "#{@author.auth_twitter}", "http://www.twitter.com/#{@author.auth_twitter}", :target =>"_blank" %>
+					</div>
 				</div>
 			</div>
 		<%end%>
