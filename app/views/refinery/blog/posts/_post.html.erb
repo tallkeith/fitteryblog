@@ -38,6 +38,13 @@
       </header>
       <br>
       <%= @post.body.html_safe %>
+
+      <% if (tags = @post.tags).any? %>
+          <aside class='tagged'>
+            <%= t('TAGS:', :scope => 'refinery.blog.posts.show').upcase %>
+            <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %>
+          </aside>
+        <% end %>
     
     <%= render 'nav' if next_or_previous?(@post) %>
 

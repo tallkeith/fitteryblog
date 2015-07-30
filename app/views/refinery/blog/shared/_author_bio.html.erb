@@ -7,15 +7,17 @@
 					<img src="<%= @author.image.url %>" alt="<%= @author.full_name%>" height="100%" width="100%" class="img-circle">
 				</div>
 				<div class="col-md-8">
-					<h1><%= @author.full_name %></h1>
-					<h3><%= @author.auth_title %> </h3>
-					<p><%= @author.auth_bio %></p>
-					<div class="inline-block">
+					<h2><%= @author.full_name %></h2>
+					<h4><%= @author.auth_title.upcase %> </h4>
 					
-
-					<%= image_tag("twitter.png", class: "img-responsive", :size => "25x25") %>
-					<%= link_to "#{@author.auth_twitter}", "http://www.twitter.com/#{@author.auth_twitter}", :target =>"_blank" %>
+					<div class="twit_img">
+						<%= image_tag("twitter.png", class: "img-responsive", :size => "25x25") %>	
 					</div>
+
+					<div class="twit-handle">
+						<%= link_to "#{@author.auth_twitter}", "http://www.twitter.com/#{@author.auth_twitter}", :target =>"_blank" %>
+					</div>
+					<p><%= @author.auth_bio %></p>
 				</div>
 			</div>
 		<%end%>
