@@ -3,7 +3,6 @@
 // 	Newsletter Sign Up 
 //************
 div.mc-field-group input {
-  
   border-radius: 3px;
   outline: 0 none;
 }
@@ -29,6 +28,10 @@ div.mc-field-group input {
 	float: right;
 }
 
+a {
+	color: $site-blue;
+}
+
 .sidebar_spacer {
 	padding-left: 19px;
 }
@@ -51,11 +54,14 @@ div.mc-field-group input {
 .twit_img {
 	float: left;
 	margin-right: 5px;
-	
 }
 
 .twit-handle {
 	margin-bottom: 20px;
+}
+
+.auth_info {
+	color: #333333;
 }
 
 //************
@@ -67,7 +73,6 @@ div.mc-field-group input {
 		padding-right: 15px;
 		margin: 0 auto;
 		max-width: 1150px;
-		
 	}
 
 .blog {
@@ -76,12 +81,10 @@ div.mc-field-group input {
 		padding-right: 15px;
 		margin: 0 auto;
 		max-width: 1150px;
-		
 	}
-}
-
-.side-body {
-	float: right;
+	.side-body {
+		float: right;
+	}	
 }
 
 .content-body{
@@ -91,4 +94,11 @@ div.mc-field-group input {
 h4 {
 	color: #999999;
 }
+
+h2 {
+	color: #333333 !important;
+}
+
+
+
 

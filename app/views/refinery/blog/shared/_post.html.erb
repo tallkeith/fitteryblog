@@ -2,7 +2,9 @@
   <% if post.live? %>
     <article class="blog_post" id="<%= dom_id(post) %>">
       <header>
-        <h1><%= link_to post.title, refinery.blog_post_path(post) %></h1>
+        <%= link_to refinery.blog_post_path(post) do %>
+          <h2><%= post.title %></h2>
+        <% end %>
         <div class="text-justify">
           <section class='details'>
             <h4>

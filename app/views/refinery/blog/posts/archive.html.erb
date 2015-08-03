@@ -1,7 +1,7 @@
 <% content_for :title, "#{t('.blog_archive_for', :date => @date_title)}" %>
 
 <% content_for :body do %>
-  <h1><%= t('.blog_archive_for', :date => @date_title) %></h1>
+  <h2><%= t('.blog_archive_for', :date => @date_title) %></h2>
   <% if @posts.any? %>
     <section id="blog_posts">
       <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>

@@ -1,5 +1,5 @@
 <% if @categories.any? %>
-  <h2 class="emphasize"><%= t('.title') %></h2>
+  <h3 class="emphasize"><%= t('.title') %></h3>
   <ul class="list-unstyled sidebar_spacer" id='categories'>
     <% @categories.each do |category| %>
       <li<%= " class='selected'" if @category.present? and @category.id == category.id %>>

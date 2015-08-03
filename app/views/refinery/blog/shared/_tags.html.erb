@@ -1,5 +1,5 @@
 <% if @tags.any? %>
-  <h2 class="emphasize"><%= t('.title') %></h2>
+  <h3 class="emphasize"><%= t('.title') %></h3>
   <nav class="sidebar_spacer" id='tags'>
     <% tag_cloud(@tags, %w(tag1 tag2 tag3 tag4)) do |tag, css_class| %>
       <%= link_to tag.name, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize), :class => css_class %>
