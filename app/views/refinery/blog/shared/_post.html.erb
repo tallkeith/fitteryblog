@@ -16,8 +16,6 @@
                 &middot;
 
                 <% if (categories = post.categories.translated).any? %>
-          
-                <li><%= t('filled_in', :scope => 'refinery.blog.posts.show') %>
                 <%=raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence.upcase %></li>
                 
                 &middot;

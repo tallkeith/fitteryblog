@@ -4,6 +4,7 @@
    </div>
   <% end %>
   
+
   <article id="blog_post">
     <div class="container-fluid">
       <div class="row inner-blog-content">
@@ -21,8 +22,6 @@
                     &middot;
 
                    <li><% if (categories = @post.categories).any? %>
-                  
-                    <%= t('filled_in', :scope => 'refinery.blog.posts.show') %>
                     <% categories.each_with_index do |category, index| %>
                       <%= link_to category.title, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
                     <% end %>
@@ -44,7 +43,7 @@
 
           <% if (tags = @post.tags).any? %>
               <aside class='tagged'>
-                <%= t('tags:', :scope => 'refinery.blog.posts.show').upcase %>
+                TAGS:
                 <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %>
               </aside>
             <% end %>
@@ -83,3 +82,9 @@
 
   <%= render '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
 </div>
+
+<!-- Social Media icons -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-559d6a2f5d9bc1d4">
+    </script>
+  <!-- End Social media icons -->
