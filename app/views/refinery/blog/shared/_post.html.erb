@@ -3,6 +3,7 @@
     <article class="blog_post" id="<%= dom_id(post) %>">
       <header>
         <%= link_to refinery.blog_post_path(post) do %>
+        <br>
           <h2><%= post.title %></h2>
         <% end %>
         <div class="text-justify">
@@ -41,11 +42,11 @@
         <% end %>
       </section>
       <footer>
-        <p>
-          <% if blog_post_teaser_enabled? && post.custom_teaser.present? %>
+        
+          <br>
           <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post) %>
-          <% end %>
-        </p>
+          
+        
         
       </footer>
     </article>

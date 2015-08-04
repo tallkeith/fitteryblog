@@ -30,8 +30,8 @@
                    
                    &middot;
                    
-                   <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class='posted_at'>
-                    <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date, :format => :long)) %>
+                  <time>
+                    <%= @post.published_at.strftime("%B, %d, %Y").upcase %>
                   </time>
 
                   </ul>
