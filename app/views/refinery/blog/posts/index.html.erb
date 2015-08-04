@@ -1,3 +1,4 @@
+<% if @author.nil? %>
 	<div class="content-body">
 		<div class="row header">
 	  	<%= image_tag('fittery-image.jpg', class: 'img-responsive') %>
@@ -6,6 +7,7 @@
 	  	</h1>
 		</div>
 	</div>
+	<%end%>
 
 	<div class="container-fluid">
 		<div class="row inner-blog-content">
