@@ -5,7 +5,7 @@
 
 
       <% content_for :body do %>
-      <h1>You are in the <%= @category.title.upcase%> Category</h1>
+      <h1><%= @category.title.upcase%> Category</h1>
         <% if @posts.any? %>
           <section id="blog_posts">
             <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>

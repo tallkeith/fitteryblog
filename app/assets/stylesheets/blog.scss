@@ -1,7 +1,43 @@
+//************
+// 	General 
+//************
+
+.inner-blog-content{
+		padding-left: 15px;
+		padding-right: 15px;
+		margin: 0 auto;
+		margin-top: 25px;
+		max-width: 1150px;
+	}
+
+.blog {
+	.inner-blog-content{
+		padding-left: 15px;
+		padding-right: 15px;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	.side-body {
+		float: right;
+	}	
+}
+
+.content-body{
+	float: left;
+}
+
+h4 {
+	color: #999999;
+}
+
+h2 {
+	color: #333333 !important;
+}
 
 //************
 // 	Newsletter Sign Up 
 //************
+
 div.mc-field-group input {
   border-radius: 3px;
   outline: 0 none;
@@ -68,43 +104,31 @@ a {
 	margin-top: -10px;
 }
 
-//************
-// 	General 
-//************
-
-.inner-blog-content{
-		padding-left: 15px;
-		padding-right: 15px;
-		margin: 0 auto;
-		margin-top: 25px;
-		max-width: 1150px;
+@media (max-width: 530px) {
+	.img-circle {
+		margin-bottom: 20px;
 	}
-
-.blog {
-	.inner-blog-content{
-		padding-left: 15px;
-		padding-right: 15px;
-		margin: 0 auto;
-		max-width: 1150px;
-	}
-	.side-body {
-		float: right;
-	}	
 }
 
-.content-body{
-	float: left;
-}
+//************
+// 	Blockquote 
+//************
 
-h4 {
-	color: #999999;
-}
-
-h2 {
-	color: #333333 !important;
+blockquote {
+	font-size: 24px;
+	text-align: justify;
+	border-left: 10px solid $site-blue;
+	border-right: 10px solid $site-blue;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 
+//************
+// 	Tags 
+//************
 
-
-
+.tag_bg {
+	background-color: $site-blue;
+	color: white;
+}

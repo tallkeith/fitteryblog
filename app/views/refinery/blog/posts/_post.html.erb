@@ -43,8 +43,7 @@
 
           <% if (tags = @post.tags).any? %>
               <aside class='tagged'>
-                TAGS:
-                <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %>
+                <p>TAGS: <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %></p>
               </aside>
             <% end %>
         
