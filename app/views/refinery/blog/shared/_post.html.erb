@@ -14,18 +14,18 @@
                 <li><%= link_to "#{post.author.username.upcase}", "/blog/author/#{post.author.id}" if post.author.present? %></li>
               <!-- End author link -->
                 
-                &middot;
+                <li>&middot;</li>
 
-                <li><% if (categories = post.categories.translated).any? %>
-                <%=raw categories.collect { |category| link_to category.title.upcase, refinery.blog_category_path(category) }.to_sentence %></li>
+                <% if (categories = post.categories.translated).any? %>
+                <li><%=raw categories.collect { |category| link_to category.title.upcase, refinery.blog_category_path(category) }.to_sentence %></li>
                 
-                &middot;
+                <li>&middot;</li>
                 
                 <% end %>
 
-                <li><time>
-                    <%= post.published_at.strftime("%B, %d, %Y").upcase %>
-                  </time></li>
+                <time>
+                    <%= post.published_at.strftime("%b %-d, %Y").upcase %>
+                  </time>
               </ul>
             </h4>
           </section>
@@ -44,7 +44,7 @@
       <footer>
         
           <br>
-          <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post) %>
+          <%= link_to 'Read More >>', refinery.blog_post_path(post) %>
           <br>
         
         

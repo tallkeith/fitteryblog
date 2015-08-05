@@ -19,19 +19,19 @@
                     <li><%= link_to "#{@post.author.username.upcase}", "/blog/author/#{@post.author.id}" if @post.author.present? %></li>
                   <!-- End author link -->
                     
-                    &middot;
+                  <li>&middot;</li>
 
-                   <li><% if (categories = @post.categories).any? %>
-                    <% categories.each_with_index do |category, index| %>
+                   <% if (categories = @post.categories).any? %>
+                    <li><% categories.each_with_index do |category, index| %>
                       <%= link_to category.title, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
                     <% end %>
                   
                   <% end %></li>
                    
-                   &middot;
+                   <li>&middot;</li>
                    
                   <time>
-                    <%= @post.published_at.strftime("%B, %d, %Y").upcase %>
+                    <%= @post.published_at.strftime("%b %-d, %Y").upcase %>
                   </time>
 
                   </ul>
