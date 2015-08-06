@@ -23,7 +23,7 @@
 
                    <% if (categories = @post.categories).any? %>
                     <li><% categories.each_with_index do |category, index| %>
-                      <%= link_to category.title, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
+                      <%= link_to category.title.upcase, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
                     <% end %>
                   
                   <% end %></li>
