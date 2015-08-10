@@ -16,7 +16,7 @@
                 <h4>
                   <ul class="list-inline">
                   <!-- Begin author link -->
-                    <%= link_to "#{@post.author.username.upcase}", "/blog/author/#{@post.author.id}" if @post.author.present? %>
+                    <%= link_to "#{@post.author.full_name.upcase}", "/blog/author/#{@post.author.id}" if @post.author.present? %>
                   <!-- End author link -->
                     
                   &middot;

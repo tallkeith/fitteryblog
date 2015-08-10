@@ -166,44 +166,32 @@ blockquote {
 .header_copy {
 	color: white;
 	text-align: center;
+	padding-left: 20%;
+	padding-right: 20%;
+
 }
 
 .header_title {
 	color: white;
-}
-
-.head_info {
-	
-	
+	text-align: center;
 }
 
 @media (max-width: 970px) {
 	.head_info {
-		position: absolute;
-		top: 70%;
+		
+		top: 65%;
 	}
 }
 
 @media (max-width: 760px) {
-	.head_info {
-		position: absolute;
-		top: 80%;
-		p {
-			font-size: 10px;
-		}
+		.header_copy {
+			display: none;
 	}
 }
 
-@media (max-width: 540px) {
-	.head_info {
-		position: absolute;
-		top: 50%;
-	}
-}
-
-@media (max-width: 430px) {
-	.head_info {
-		position: absolute;
-		top: 40%;
-	}
-}
+// @media (max-width: 1150px) {
+// 		 {
+			
+// 	}
+// }
+// max-width: 1150px;
