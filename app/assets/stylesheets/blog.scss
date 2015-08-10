@@ -131,3 +131,24 @@ blockquote {
 	background-color: $site-blue;
 	color: white;
 }
+
+//************
+// 	Responsiveness 
+//************
+@media (max-width: 640px) {
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .row {
+  	padding-left: 0px;
+  	padding-right: 0px;
+  	margin-right: 0px;
+  	margin-left: 0px;
+  	width: 100%;
+  }
+
+}
