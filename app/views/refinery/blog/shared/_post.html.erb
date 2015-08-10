@@ -11,21 +11,21 @@
             <h4>
               <ul class="list-inline">
               <!-- Begin author link -->
-                <li><%= link_to "#{post.author.username.upcase}", "/blog/author/#{post.author.id}" if post.author.present? %></li>
+                <li><%= link_to "#{post.author.username.upcase}", "/blog/author/#{post.author.id}" if post.author.present? %>
               <!-- End author link -->
                 
-                <li>&middot;</li>
+                &middot;
 
                 <% if (categories = post.categories.translated).any? %>
-                <li><%=raw categories.collect { |category| link_to category.title.upcase, refinery.blog_category_path(category) }.to_sentence %></li>
+                <%=raw categories.collect { |category| link_to category.title.upcase, refinery.blog_category_path(category) }.to_sentence %>
                 
-                <li>&middot;</li>
+                &middot;
                 
                 <% end %>
 
                 <time>
                     <%= post.published_at.strftime("%b %-d, %Y").upcase %>
-                  </time>
+                  </time></li>
               </ul>
             </h4>
           </section>

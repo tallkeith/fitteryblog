@@ -16,24 +16,23 @@
                 <h4>
                   <ul class="list-inline">
                   <!-- Begin author link -->
-                    <li><%= link_to "#{@post.author.username.upcase}", "/blog/author/#{@post.author.id}" if @post.author.present? %></li>
+                    <%= link_to "#{@post.author.username.upcase}", "/blog/author/#{@post.author.id}" if @post.author.present? %>
                   <!-- End author link -->
                     
-                  <li>&middot;</li>
+                  &middot;
 
                    <% if (categories = @post.categories).any? %>
-                    <li><% categories.each_with_index do |category, index| %>
+                    <% categories.each_with_index do |category, index| %>
                       <%= link_to category.title.upcase, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
                     <% end %>
                   
-                  <% end %></li>
-                   
-                   <li>&middot;</li>
+                  &middot;
+                  
+                  <% end %>
                    
                   <time>
                     <%= @post.published_at.strftime("%b %-d, %Y").upcase %>
-                  </time>
-
+                  </time></li>
                   </ul>
                 </h4>
               </section>
