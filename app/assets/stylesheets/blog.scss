@@ -135,6 +135,7 @@ blockquote {
 //************
 // 	Responsiveness 
 //************
+
 @media (max-width: 640px) {
   .container-fluid {
     padding-left: 0px;
@@ -153,6 +154,56 @@ blockquote {
 
 }
 
+//************
+// 	Header
+//************
+
 .content-body {
 	width: 100%
+
+}
+
+.header_copy {
+	color: white;
+	text-align: center;
+}
+
+.header_title {
+	color: white;
+}
+
+.head_info {
+	
+	
+}
+
+@media (max-width: 970px) {
+	.head_info {
+		position: absolute;
+		top: 70%;
+	}
+}
+
+@media (max-width: 760px) {
+	.head_info {
+		position: absolute;
+		top: 80%;
+		p {
+			font-size: 10px;
+		}
+	}
+}
+
+@media (max-width: 540px) {
+	.head_info {
+		position: absolute;
+		top: 50%;
+	}
+}
+
+@media (max-width: 430px) {
+	.head_info {
+		position: absolute;
+		top: 40%;
+	}
 }
