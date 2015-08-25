@@ -1,0 +1,17 @@
+%input#switch_locale{:name => "switch_locale", :type => "hidden", :value => ""}/
+= local_assigns[:current_locale]
+" /&gt;
+- if Refinery::I18n.frontend_locales.many?
+  %label= t('.language')
+  %ul#switch_locale_picker.clearfix
+    - locales = Refinery::I18n.locales.clone
+    - Refinery::I18n.frontend_locales.each do |locale|
+      - locale_name = locales.delete(locale)
+      %li
+      = %Q{ class=selected} if locale.to_s == local_assigns[:current_locale].to_s
+      \&gt;
+      \#{link_to refinery.url_for(:switch_locale = locale, :parent_id = params[:parent_id]), id: locale do}
+        .locale_icon
+          = refinery_icon_tag('locale.svg', :size = '24x24', :alt = locale.upcase)
+          %span.code= locale_country(locale)
+        = locale_name

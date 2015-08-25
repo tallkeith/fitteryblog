@@ -1,0 +1,8 @@
+- if @categories.any?
+  %h3.emphasize= t('.title')
+  %ul#categories.list-unstyled.sidebar_spacer
+    - @categories.each do |category|
+      %li
+      = class='selected' if @category.present? and @category.id == category.id
+      \&gt;
+      \#{link_to #{category.title} (#{category.post_count}), refinery.blog_category_path(category)}

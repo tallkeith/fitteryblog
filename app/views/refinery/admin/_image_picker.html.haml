@@ -1,0 +1,28 @@
+- description ||= 'image'
+- thumbnail ||= 'medium'
+- toggle_image_display ||= false
+- conditions ||= nil
+- randomiser = rand(Time.now.yesterday.to_i * Time.now.to_i)
+- current_image_link_href = refinery.insert_admin_images_path(:dialog => true, :callback => "image_picker_#{randomiser}_changed",
+- :width => 866, :height => 510, :conditions => conditions)
+- current_image_title = t('.change', :what =>  description.titleize)
+#image_picker_container_
+= randomiser
+'&gt;
+\#{link_to t('.show'), '', :class = current_image_toggler if toggle_image_display}
+\#{f.hidden_field field, :class = current_image_id}
+.current_image_container{:style => "margin-top: 10px"}
+= ;display: none if toggle_image_display
+"&gt;
+%a.current_image_link.dialog{:href => ""}
+= current_image_link_href
+" style='border: 0px' title='#{current_image_title}' name='#{current_image_title}'&gt;
+- if image.nil?
+  %img.current_picked_image{:alt => "", :src => "", :style => "display: none"}/
+- else
+  = image_fu image, Refinery::Images.user_image_sizes[thumbnail.to_sym], |
+    :class = brown_border current_picked_image                           |
+%span.no_picked_image_selected.nothing_selected
+= style='display: none;'.html_safe if image.present?
+\&gt;
+\#{t('.none_selected')}

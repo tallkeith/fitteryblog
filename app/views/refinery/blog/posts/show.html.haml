@@ -1,0 +1,10 @@
+- content_for :body do
+  #show_blog_post
+    = render 'post'
+= render "/refinery/content_page", :remove_automatic_sections => true
+- content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend')
+- content_for :javascripts do
+  %script{:src => "http://w.sharethis.com/button/buttons.js"}
+  :javascript
+    stLight.options({publisher:'#{Refinery::Blog.share_this_key}'});
+- end if Refinery::Blog::Post::ShareThis.enabled?

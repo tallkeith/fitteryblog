@@ -1,0 +1,9 @@
+!!!
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html lang="<haml_loud> ::I18n.locale </haml_loud>" class="no-js ie6">
+/[if IE 7 ] <html lang="<haml_loud> ::I18n.locale </haml_loud>" class="no-js ie7">
+/[if IE 8 ] <html lang="<haml_loud> ::I18n.locale </haml_loud>" class="no-js ie8">
+/[if IE 9 ] <html lang="<haml_loud> ::I18n.locale </haml_loud>" class="no-js ie9">
+/ [if (gt IE 9)|!(IE)]><!
+%html.no-js{:lang => "#{::I18n.locale}"}
+  / <![endif]

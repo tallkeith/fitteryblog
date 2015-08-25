@@ -1,0 +1,12 @@
+- if object.errors.any?
+  #errorExplanation.errorExplanation
+    %p
+      = t('.problems_in_following_fields')
+      \:
+    %ul
+      - if defined?(include_object_name) and include_object_name
+        - object.errors.full_messages.each do |value|
+          %li= value
+      - else
+        - object.errors.each do |key, value|
+          %li= value

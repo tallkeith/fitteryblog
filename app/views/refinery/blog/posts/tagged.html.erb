@@ -19,8 +19,10 @@
 			<%= render "/refinery/content_page" %>
 		</div>
 		<div class="col-sm-4">
+			<%= render "/refinery/blog/shared/posts" %><br>
+
 			<%= render '/refinery/blog/shared/body_content_right' %>
-			<%= render "/refinery/blog/shared/tags" %>
+			
 		</div>
 
 		<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>

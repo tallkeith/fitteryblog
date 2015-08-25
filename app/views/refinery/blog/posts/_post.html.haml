@@ -1,0 +1,53 @@
+%body
+  - flash.each do |key, value|
+    #flash{:class => "flash flash_#{key}"}
+      = value
+  %article#blog_post
+    .container-fluid
+      .row.inner-blog-content
+        .col-sm-8
+          %header
+            %h2.auth_info= @post.title
+            %section.details
+              %h4
+                %ul.list-inline
+                  / Begin author link
+                  %li
+                    = link_to "#{@post.author.full_name.upcase}", "/blog/author/#{@post.author.id}" if @post.author.present?
+                    / End author link
+                    ·
+                    - if (categories = @post.categories).any?
+                      - categories.each_with_index do |category, index|
+                        = link_to category.title.upcase, refinery.blog_category_path(category)
+                        = ',' if index < ((categories.length) - 1)
+                      ·
+                    %time
+                      = @post.published_at.strftime("%b %-d, %Y").upcase
+          %br/
+          = @post.body.html_safe
+          - if (tags = @post.tags).any?
+            %aside.tagged
+              %p
+                TAGS: #{raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence}
+          = render 'nav' if next_or_previous?(@post)
+          #disqus_thread
+          :javascript
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = 'fittery';
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          %noscript
+            Please enable JavaScript to view the
+            %a{:href => "https://disqus.com/?ref_noscript", :rel => "nofollow"} comments powered by Disqus.
+        / Begin Sidebar
+        .col-sm-4
+          = render '/refinery/blog/shared/body_content_right'
+        / End Sidebar
+  / Go to www.addthis.com/dashboard to customize your tools
+  %script#addthis{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-559d6a2f5d9bc1d4", :type => "text/javascript"}
+  = render '/refinery/draft_page_message' unless @post.nil? or @post.live?

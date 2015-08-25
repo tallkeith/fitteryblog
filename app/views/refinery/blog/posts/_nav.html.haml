@@ -1,0 +1,13 @@
+%nav#next_prev_article
+  - if @post.next.present?
+    = link_to h(truncate(@post.next.title)) + " »".html_safe, |
+      refinery.blog_post_path(@post.next),                    |
+      :class => 'next'                                        |
+  = link_to t('blog_home', :scope => 'refinery.blog.posts.show'), |
+    refinery.blog_root_path,                                      |
+    :class => 'home'                                              |
+  - if @post.prev.present?
+    = link_to "« ".html_safe + h(truncate(@post.prev.title)), |
+      refinery.blog_post_path(@post.prev),                    |
+      :class => 'prev'                                        |
+/ /next_prev_article

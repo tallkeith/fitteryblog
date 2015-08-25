@@ -1,0 +1,7 @@
+#page_part_teaser.page_part
+  = f.text_area :custom_teaser, :rows => 20, :class => 'wymeditor widest'
+  %p
+    %span.clearfix.label_inline_with_link
+      = link_to t('copy_body', :scope => 'refinery.blog.admin.posts.form'), "#",  |
+        :id => 'copy_body_link',                                                  |
+        :title => t('copy_body_help', :scope => 'refinery.blog.admin.posts.form') |

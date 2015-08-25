@@ -1,0 +1,19 @@
+= render '/refinery/blog/admin/submenu'
+#records
+  - if searching?
+    %h2= t('results_for', :scope => 'refinery.admin.search', |
+        :query => params[:search])                          |
+    - if @posts.any?
+      = render :partial => "blog_posts", |
+        :collection => @posts            |
+    - else
+      %p= t('no_results', :scope => 'refinery.admin.search')
+  - else
+    - if @posts.any?
+      = will_paginate @posts
+      = render "sortable_list"
+      = will_paginate @posts
+    - else
+      %p
+        %strong
+          = t('.no_items_yet')

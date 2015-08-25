@@ -1,0 +1,5 @@
+- if params[list_id ||= "sortable_list"].present? and !!local_assigns[:continue_reordering]
+  :javascript
+    $(document).ready(function(){
+      list_reorder.enable_reordering();
+    });

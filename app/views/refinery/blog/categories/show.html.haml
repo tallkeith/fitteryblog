@@ -1,0 +1,24 @@
+.container-fluid
+  .row.inner-blog-content
+    - content_for :body_content_title, @category.title
+    - content_for :body do
+      %h1
+        = @category.title.upcase
+        Category
+      - if @posts.any?
+        %section#blog_posts
+          = render :partial => "/refinery/blog/shared/post", :collection => @posts
+          = will_paginate @posts
+      - else
+        %p
+          = t('.no_posts')
+    .col-sm-8
+      = render "/refinery/content_page"
+    .col-sm-4
+      = render "/refinery/blog/shared/newsletter"
+      = render "/refinery/blog/shared/posts"
+      = render "/refinery/blog/shared/categories"
+      = render "/refinery/blog/shared/follow_us"
+    / Go to www.addthis.com/dashboard to customize your tools
+    %script{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-559d6a2f5d9bc1d4", :type => "text/javascript"}
+    - content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend')

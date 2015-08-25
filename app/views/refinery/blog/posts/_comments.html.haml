@@ -1,0 +1,24 @@
+%aside#comments
+  - if (comments = @post.comments.approved).any?
+    %h2= t('title', :scope => 'refinery.blog.posts.show.comments')
+    = render :partial => "comment", :collection => comments
+  - if Refinery::Blog::Post.comments_allowed?
+    - flash.each do |key, value|
+      #flash{:class => "flash flash_#{key}"}
+        = value
+    %h2= t('add', :scope => 'refinery.blog.posts.show.comments')
+    = form_for [refinery, :blog, @comment] do |f|
+      = render "/refinery/admin/error_messages", |
+        :object => f.object,                     |
+        :include_object_name => true             |
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :email
+        = f.email_field :email
+      .field.message_field
+        = f.label :message
+        = f.text_area :message, :rows => 6
+      .field.form-actions
+        = f.submit t('submit', :scope => 'refinery.blog.posts.show')

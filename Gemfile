@@ -68,6 +68,7 @@ group :development, :test do
  	gem 'pry-remote'
  	gem 'pry-byebug'
  	gem 'binding_of_caller'
+  gem 'erb2haml'
 
 end
 

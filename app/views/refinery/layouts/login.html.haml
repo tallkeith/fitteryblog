@@ -1,0 +1,15 @@
+!!!
+%html
+  %body
+    = render '/refinery/html_tag'
+    = render '/refinery/admin/head'
+    #tooltip_container
+    #login_container.clearfix
+      %header
+        %h1= yield :header
+      #page_container
+        #page
+          #content.clearfix
+            #flash_container
+              = render '/refinery/message'
+            = yield

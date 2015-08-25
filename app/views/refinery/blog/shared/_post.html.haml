@@ -1,0 +1,31 @@
+%body
+  - if post.live?
+    %article.blog_post{:id => "#{dom_id(post)}"}
+      %header
+        = link_to refinery.blog_post_path(post) do
+          %h2= post.title
+        %section.details
+          %h4
+            %ul.list-inline
+              / Begin author link
+              %li
+                = link_to "#{post.author.full_name.upcase}", "/blog/author/#{post.author.id}" if post.author.present?
+                / End author link
+                ·
+                - if (categories = post.categories).any?
+                  - categories.each_with_index do |category, index|
+                    = link_to category.title.upcase, refinery.blog_category_path(category)
+                    = ',' if index < ((categories.length) - 1)
+                  ·
+                %time
+                  = post.published_at.strftime("%b %-d, %Y").upcase
+        %br/
+      %section.clearfix
+        - if blog_post_teaser_enabled?
+          = blog_post_teaser(post)
+        - else
+          = post.body.html_safe
+      %footer
+        %br/
+        = link_to 'Read More >>', refinery.blog_post_path(post)
+        %br/

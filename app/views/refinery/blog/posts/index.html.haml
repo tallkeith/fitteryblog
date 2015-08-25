@@ -1,0 +1,30 @@
+- if @author.nil?
+  .content-body
+    .row.header
+      = image_tag('gray-fabric-texture-slice-edited.jpg', class: 'img-responsive')
+      .head_info
+        %h1.header_title Blog
+        %p.header_copy Fittery: saving the world. Or just helping people find clothes that fit. Really, the latter. And here's where we blog all about clothing fit, fashion trends, and startup life.
+.container-fluid
+  .row.inner-blog-content
+    - content_for :body do
+      .blog
+        = render "/refinery/blog/shared/author_bio"
+        - if @posts.any?
+          %section#blog_posts
+            = render :partial => "/refinery/blog/shared/post", :collection => @posts
+            = will_paginate @posts
+        - else
+          %p= t('.no_blog_articles_yet')
+        / Begin posts
+        .col-sm-8
+          = render "/refinery/content_page"
+        / End posts
+        / Begin Sidebar
+        .col-sm-4
+          = render '/refinery/blog/shared/body_content_right'
+        / End Sidebar
+      / End Blog Div
+  / end row
+/ end container
+- content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend')

@@ -1,0 +1,12 @@
+- content_for :title, "#{t('.blog_archive_for', :date => @date_title)}"
+- content_for :body do
+  %h2= t('.blog_archive_for', :date => @date_title)
+  - if @posts.any?
+    %section#blog_posts
+      = render :partial => "/refinery/blog/shared/post", :collection => @posts
+      = will_paginate @posts
+  - else
+    %p= t('.no_blog_articles_posted', :date => @date_title)
+= render '/refinery/blog/shared/body_content_right'
+= render "/refinery/content_page"
+- content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend')

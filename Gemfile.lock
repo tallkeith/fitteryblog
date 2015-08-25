@@ -134,6 +134,8 @@ GEM
       addressable (~> 2.3)
       multi_json (~> 1.0)
       rack (>= 1.3.0)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     excon (0.45.4)
     execjs (2.5.2)
@@ -311,6 +313,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.1.0)
+  erb2haml
   foreman
   haml
   haml-rails

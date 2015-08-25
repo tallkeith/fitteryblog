@@ -1,0 +1,18 @@
+!!!
+%html
+  %body
+    = render "/refinery/html_tag"
+    - site_bar = render('/refinery/site_bar', :head => true)
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = render "/refinery/head"
+    = site_bar
+    #page_container
+      %header#header
+        = render "/refinery/header"
+      %section#page
+        = yield
+      %footer
+        = render "/refinery/footer"
+    = render "/refinery/javascripts"
